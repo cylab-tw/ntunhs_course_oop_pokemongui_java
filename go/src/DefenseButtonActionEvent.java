@@ -5,6 +5,7 @@ import java.util.Timer;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
 public class DefenseButtonActionEvent implements ActionListener
@@ -29,20 +30,27 @@ public class DefenseButtonActionEvent implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{	
-		jTextArea.setText(jTextArea.getText() + "¨¾¿m!\n");
-		this.arenaInit();
-		
-		if(this.arena.monster2Action.equals(Arena.attackString))
+		if (arena.isFightDone == false) 
 		{
-			try {
-				this.attackAnimation();
-			} catch (Exception e2) {
-				// TODO: handle exception
+			jTextArea.setText(jTextArea.getText() + "¨¾¿m!\n");
+			this.arenaInit();
+			
+			if(this.arena.monster2Action.equals(Arena.attackString))
+			{
+				try {
+					this.attackAnimation();
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
+			}
+			else 
+			{
+				arena.fight();
 			}
 		}
 		else 
 		{
-			arena.fight();
+			JOptionPane.showMessageDialog(null, "¾Ô°«¤wµ²§ô!");
 		}
 	}
 	
