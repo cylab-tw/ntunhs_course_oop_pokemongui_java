@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 //Java GUI Swing 入門：https://iter01.com/560263.html
@@ -20,21 +21,16 @@ public class PokemonGUI {
 	JButton attackButton = new JButton("攻擊");
     JButton defenseButton = new JButton("防禦");
     JButton baseDetailButton = new JButton("基本資料");
-    JTextArea jTextArea = new JTextArea("ConsoleBagConstraints");
+    JTextArea jTextArea = new JTextArea("遊戲開始!\n");
+    JScrollPane jScrollPane = new JScrollPane(jTextArea);
 	JPanel jPanel = new JPanel();
 	JLabel player1JLabel = new JLabel();
 	JLabel player2JLabel = new JLabel();
 	AttackButtonKeyBoardListener myKeyListener = new AttackButtonKeyBoardListener();
+	Arena arena = new Arena(null, null, null);
 	
-    
 	public static void main(String[] args) throws IOException {
         new PokemonGUI().init();
-        
-        Actor actor1 = new Actor("小高", "092214221", "221");
-        MonsterFire botMonster = new MonsterFire();
-        MonsterWater playerMonster = new MonsterWater();
-        actor1.MonsterWater = playerMonster;
-        
     } 
 	
 	
@@ -106,7 +102,7 @@ public class PokemonGUI {
 		ConsoleBagConstraints.weighty = 1;
 		ConsoleBagConstraints.fill = GridBagConstraints.BOTH;
 		ConsoleBagConstraints.anchor = GridBagConstraints.WEST;
-		jFrame.add(jTextArea, ConsoleBagConstraints);
+		jFrame.add(jScrollPane, ConsoleBagConstraints);
 	}
 	
 	private void ButtonInit()
@@ -118,13 +114,13 @@ public class PokemonGUI {
 	
 	private void AttackButtonInit() 
 	{
-		AttackButtonActionEvent attackButtonActionEvent = new AttackButtonActionEvent(attackButton, jTextArea, player1JLabel, player2JLabel);
+		AttackButtonActionEvent attackButtonActionEvent = new AttackButtonActionEvent(attackButton, jTextArea, player1JLabel, player2JLabel, arena);
 		attackButton.addActionListener(attackButtonActionEvent);
 	}
 	
 	private void DefenseButtonInit() 
 	{
-		DefenseButtonActionEvent defenseButtonActionEvent = new DefenseButtonActionEvent(defenseButton, jTextArea, player1JLabel, player2JLabel);
+		DefenseButtonActionEvent defenseButtonActionEvent = new DefenseButtonActionEvent(defenseButton, jTextArea, player1JLabel, player2JLabel, arena);
 		defenseButton.addActionListener(defenseButtonActionEvent);
 	}
 	
@@ -164,13 +160,34 @@ public class PokemonGUI {
 		jFrame.addKeyListener(baseDetailButtonKeyBoardListener);
 	}
 	
+	private void JTextAreaInit()
+	{
+		this.jTextArea.setEditable(false);
+	}
+	
+	private void arenaInit()
+	{
+		Actor actor = new Actor("小高", "092214221", "221");
+        MonsterFire botMonster = new MonsterFire();
+        botMonster.ID = "999";
+        botMonster.Name = "Bot";
+        
+        MonsterWater playerMonster = new MonsterWater();
+        playerMonster.ID = actor.Account;
+        playerMonster.Name = actor.Name;
+        
+        actor.MonsterWater = playerMonster;
+        this.arena = new Arena(actor.MonsterWater, botMonster, jTextArea);
+	}
+	
 	private void init() throws IOException
 	{
+		this.arenaInit();
 		this.JFrameInit();
 		this.GridBagConstraintsInit();
 		this.ButtonInit();
 		this.JPanelInit();
-		
+		this.JTextAreaInit();
 		
 		jFrame.setVisible(true);
 		jFrame.toFront();

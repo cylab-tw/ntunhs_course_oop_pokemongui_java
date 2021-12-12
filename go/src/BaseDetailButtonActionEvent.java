@@ -3,6 +3,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
 public class BaseDetailButtonActionEvent implements ActionListener
@@ -24,9 +25,6 @@ public class BaseDetailButtonActionEvent implements ActionListener
 	public void actionPerformed(ActionEvent e) 
 	{	
 		jTextArea.setText(jTextArea.getText() + "基本資料!");
+		JOptionPane.showMessageDialog(null, Author.getter());
 	}
-
-	
-	
-
 }
