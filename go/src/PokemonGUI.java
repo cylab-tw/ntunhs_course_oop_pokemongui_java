@@ -19,14 +19,21 @@ import javax.swing.JTextArea;
 public class PokemonGUI {
 
 	JFrame jFrame = new JFrame("PokemonGUI");
+	
 	JButton attackButton = new JButton("攻擊");
     JButton defenseButton = new JButton("防禦");
     JButton baseDetailButton = new JButton("基本資料");
+    
     JTextArea jTextArea = new JTextArea("遊戲開始!\n");
     JScrollPane jScrollPane = new JScrollPane(jTextArea);
 	JPanel jPanel = new JPanel();
+	
 	JLabel player1JLabel = new JLabel();
 	JLabel player2JLabel = new JLabel();
+	
+	ImageIcon player1Image = new ImageIcon("./pic/chromeIcon.png");
+	ImageIcon player2Image = new ImageIcon("./pic/edgeIcon.png");
+	
 	AttackButtonKeyBoardListener myKeyListener = new AttackButtonKeyBoardListener();
 	Arena arena = new Arena(null, null, null);
 	
@@ -133,9 +140,6 @@ public class PokemonGUI {
 	
 	private void JPanelInit() throws IOException
 	{		
-		ImageIcon player1Image = new ImageIcon("C:\\Users\\k2812\\eclipse-workspace\\go\\pic\\chromeIcon.png");
-		ImageIcon player2Image = new ImageIcon("C:\\Users\\k2812\\eclipse-workspace\\go\\pic\\edgeIcon.png");
-		
 		player1JLabel.setIcon(player1Image);
 		player1JLabel.setLocation(333 - player1Image.getIconWidth(), 167 - player1Image.getIconHeight());
 		player1JLabel.setSize(player1Image.getIconWidth(), player1Image.getIconHeight());
