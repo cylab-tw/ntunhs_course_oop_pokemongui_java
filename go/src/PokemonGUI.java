@@ -47,6 +47,7 @@ public class PokemonGUI {
 		jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jFrame.setSize(1000, 1000);
 		jFrame.setLayout(new GridBagLayout());
+		jFrame.setFocusable(true);
 		
 		this.KeyBoardListenerInit();
 	}
@@ -124,18 +125,21 @@ public class PokemonGUI {
 	{
 		AttackButtonActionEvent attackButtonActionEvent = new AttackButtonActionEvent(attackButton, jTextArea, player1JLabel, player2JLabel, arena);
 		attackButton.addActionListener(attackButtonActionEvent);
+		attackButton.setFocusable(false);
 	}
 	
 	private void DefenseButtonInit() 
 	{
 		DefenseButtonActionEvent defenseButtonActionEvent = new DefenseButtonActionEvent(defenseButton, jTextArea, player1JLabel, player2JLabel, arena);
 		defenseButton.addActionListener(defenseButtonActionEvent);
+		defenseButton.setFocusable(false);
 	}
 	
 	private void BaseDetailButtonInit() 
 	{
 		BaseDetailButtonActionEvent baseDetailButtonActionEvent = new BaseDetailButtonActionEvent(baseDetailButton, jTextArea, player1JLabel, player2JLabel);
 		baseDetailButton.addActionListener(baseDetailButtonActionEvent);
+		baseDetailButton.setFocusable(false);
 	}
 	
 	private void JPanelInit() throws IOException
@@ -143,15 +147,18 @@ public class PokemonGUI {
 		player1JLabel.setIcon(player1Image);
 		player1JLabel.setLocation(333 - player1Image.getIconWidth(), 167 - player1Image.getIconHeight());
 		player1JLabel.setSize(player1Image.getIconWidth(), player1Image.getIconHeight());
+		player1JLabel.setFocusable(false);
 		
 		player2JLabel.setIcon(player2Image);
 		player2JLabel.setLocation(666 - player2Image.getIconWidth(), 167 - player2Image.getIconHeight());
 		player2JLabel.setSize(player2Image.getIconWidth(), player2Image.getIconHeight());
+		player2JLabel.setFocusable(false);
 		
 		jPanel.add(player1JLabel);
 		jPanel.add(player2JLabel);
 		jPanel.setBackground(Color.white);
 		jPanel.setLayout(null);
+		jPanel.setFocusable(false);
 	}
 	
 	private void KeyBoardListenerInit() 
@@ -168,6 +175,7 @@ public class PokemonGUI {
 	private void JTextAreaInit()
 	{
 		this.jTextArea.setEditable(false);
+		this.jTextArea.setFocusable(false);
 	}
 	
 	private void arenaInit()
@@ -197,6 +205,5 @@ public class PokemonGUI {
 		jFrame.setVisible(true);
 		jFrame.toFront();
 		jFrame.requestFocus();
-	
     }
 }
