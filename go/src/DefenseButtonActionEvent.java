@@ -40,6 +40,10 @@ public class DefenseButtonActionEvent implements ActionListener
 				// TODO: handle exception
 			}
 		}
+		else 
+		{
+			arena.fight();
+		}
 	}
 	
 	private void attackAnimation() throws InterruptedException 

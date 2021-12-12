@@ -1,3 +1,5 @@
+import java.util.Random;
+
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
@@ -186,8 +188,11 @@ public class Arena {
 		int attackResult = 0;
 		
 		//紀錄防守前的原始數值
-		Monster tempDefenderMonster = defender;
-		defenseResult = tempDefenderMonster.Defend(tempDefenderMonster);
+		int orgDefenseValue = defender.getDefenseValue();
+		//this.jTextArea.setText(jTextArea.getText() + "orgDefenseValue:"+ orgDefenseValue + "\n");
+		defenseResult = defender.Defend(defender);
+		int afterDefenseValue = defender.getDefenseValue();
+		//this.jTextArea.setText(jTextArea.getText() + "afterDefenseValue:"+ afterDefenseValue + "\n");
 		
 		switch (defenseResult) 
 		{
@@ -200,11 +205,11 @@ public class Arena {
 		}
 		
 		//開始攻擊
-		attackResult = this.attackMonster(attacker, tempDefenderMonster);
+		attackResult = this.attackMonster(attacker, defender);
 		if (attackResult == 3) result = true;
 		
 		//血量回寫回去
-		defender.HP = tempDefenderMonster.HP;
+		defender.Defense = orgDefenseValue;
 		
 		return result;
 	}
@@ -221,7 +226,8 @@ public class Arena {
 	public String getRandomAction()
 	{
 		String result = new String();
-		int BotSelect = (int) (Math.random() * (2 - 1 + 1) + 1);
+		//int BotSelect = (int) (Math.random() * (2 - 1 + 1) + 1);
+		int BotSelect = new Random(System.currentTimeMillis()).nextInt(3) + 1;
 		result = BotSelect == 1 ? this.attackString : this.defenseString;
 		return result;
 	}

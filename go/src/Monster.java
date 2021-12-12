@@ -1,4 +1,6 @@
-public class Monster extends MonsterBase{
+import java.util.Random;
+
+public class Monster extends MonsterBase implements Cloneable{
     public String ID, Name;
     public int MonsterType;
     protected int HP, Attack, Defense;    
@@ -6,7 +8,8 @@ public class Monster extends MonsterBase{
     
     int Attack(Monster enemy) 
     {
-        int Arandom = (int) (Math.random() * (10 - 1 + 1) + 1);
+        //int Arandom = (int) (Math.random() * (10 - 1 + 1) + 1);
+        int Arandom = new Random(System.currentTimeMillis()).nextInt(9) + 0;
         int lostHP = 0;
         int result = 0;
         if (Arandom == 10) 
@@ -116,7 +119,8 @@ public class Monster extends MonsterBase{
     }
 
     int Defend(Monster object) {
-        int Brandom = (int) (Math.random() * (10 - 1 + 1) + 1);
+        //int Brandom = (int) (Math.random() * (10 - 1 + 1) + 1);
+    	int Brandom = new Random(System.currentTimeMillis()).nextInt(10) + 1;
         int result = 0;
         if (Brandom == 10) {// 10% x4
             object.Defense *= 4;
@@ -131,5 +135,10 @@ public class Monster extends MonsterBase{
             result = 2;
         }
         return result;
+    }
+    
+    int getDefenseValue()
+    {
+    	return this.Defense;
     }
 }

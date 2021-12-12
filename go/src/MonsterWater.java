@@ -4,8 +4,8 @@ public class MonsterWater extends Monster
     MonsterWater() 
     {
         HP = 150;
-        Attack = 20;
-        Defense = 20;
+        Attack = 50;
+        Defense = 10;
         ID = "001";
         Name = "Player";
     }

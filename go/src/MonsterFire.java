@@ -4,7 +4,7 @@ public class MonsterFire extends Monster
     MonsterFire() 
     {
         HP = 80;
-        Attack = 30;
+        Attack = 70;
         Defense = 5;
         ID = "001";
         Name = "Player";

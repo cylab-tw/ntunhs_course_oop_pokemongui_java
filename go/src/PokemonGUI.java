@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.io.IOException;
+import java.util.Random;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -169,12 +170,12 @@ public class PokemonGUI {
 	{
 		Actor actor = new Actor("¤p°ª", "092214221", "221");
         MonsterFire botMonster = new MonsterFire();
-        botMonster.ID = "999";
-        botMonster.Name = "Bot";
+        botMonster.ID = "EdgeBot";
+        botMonster.Name = "EdgeBot";
         
         MonsterWater playerMonster = new MonsterWater();
-        playerMonster.ID = actor.Account;
-        playerMonster.Name = actor.Name;
+        playerMonster.ID = "Chrome";
+        playerMonster.Name = "Chrome";
         
         actor.MonsterWater = playerMonster;
         this.arena = new Arena(actor.MonsterWater, botMonster, jTextArea);
@@ -192,5 +193,6 @@ public class PokemonGUI {
 		jFrame.setVisible(true);
 		jFrame.toFront();
 		jFrame.requestFocus();
+	
     }
 }
