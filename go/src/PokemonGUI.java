@@ -24,9 +24,17 @@ public class PokemonGUI {
 	JPanel jPanel = new JPanel();
 	JLabel player1JLabel = new JLabel();
 	JLabel player2JLabel = new JLabel();
+	AttackButtonKeyBoardListener myKeyListener = new AttackButtonKeyBoardListener();
+	
     
 	public static void main(String[] args) throws IOException {
         new PokemonGUI().init();
+        
+        Actor actor1 = new Actor("¤p°ª", "092214221", "221");
+        MonsterFire botMonster = new MonsterFire();
+        MonsterWater playerMonster = new MonsterWater();
+        actor1.MonsterWater = playerMonster;
+        
     } 
 	
 	
@@ -35,7 +43,8 @@ public class PokemonGUI {
 		jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jFrame.setSize(1000, 1000);
 		jFrame.setLayout(new GridBagLayout());
-		//jFrame.setVisible(true);
+		
+		this.KeyBoardListenerInit();
 	}
 	
 	private void GridBagConstraintsInit() 
@@ -144,13 +153,27 @@ public class PokemonGUI {
 		jPanel.setLayout(null);
 	}
 	
+	private void KeyBoardListenerInit() 
+	{
+		AttackButtonKeyBoardListener attackButtonKeyBoardListener = new AttackButtonKeyBoardListener(attackButton, jTextArea);		
+		DefenseButtonKeyBoardListener defenseButtonKeyBoardListener = new DefenseButtonKeyBoardListener(defenseButton, jTextArea);		
+		BaseDetailButtonKeyBoardListener baseDetailButtonKeyBoardListener = new BaseDetailButtonKeyBoardListener(baseDetailButton, jTextArea);
+		
+		jFrame.addKeyListener(attackButtonKeyBoardListener);
+		jFrame.addKeyListener(defenseButtonKeyBoardListener);
+		jFrame.addKeyListener(baseDetailButtonKeyBoardListener);
+	}
+	
 	private void init() throws IOException
 	{
 		this.JFrameInit();
 		this.GridBagConstraintsInit();
 		this.ButtonInit();
 		this.JPanelInit();
-		jFrame.setVisible(true);
 		
+		
+		jFrame.setVisible(true);
+		jFrame.toFront();
+		jFrame.requestFocus();
     }
 }

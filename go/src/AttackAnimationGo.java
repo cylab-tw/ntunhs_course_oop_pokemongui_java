@@ -11,6 +11,7 @@ public class AttackAnimationGo extends TimerTask
 	int orgAttackerX;
 	int orgAttackerY;
 	boolean isBack = false;
+	int offset = 5;
 	
 	public AttackAnimationGo(Timer timer, JLabel Attacker, JLabel TakeAttacker)
 	{
@@ -32,7 +33,7 @@ public class AttackAnimationGo extends TimerTask
 		{
 			if (X + (width / 2) <= TakeAttacker.getX())	
 			{
-				this.Attacker.setLocation(X+1, Y);
+				this.Attacker.setLocation(X + offset, Y);
 			}
 			else 
 			{
@@ -43,7 +44,7 @@ public class AttackAnimationGo extends TimerTask
 		{
 			if (orgAttackerX < X) 
 			{
-				this.Attacker.setLocation(X-1, Y);
+				this.Attacker.setLocation(X - offset, Y);
 			}
 			else 
 			{

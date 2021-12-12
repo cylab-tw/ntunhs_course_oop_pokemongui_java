@@ -37,7 +37,7 @@ public class AttackButtonActionEvent implements ActionListener
 	private void attackAnimation() throws InterruptedException 
 	{
 		long delay = 0L;
-		long period = 1L; 
+		long period = 5L; 
 		Timer timer = new Timer();
 		AttackAnimationGo attackAnimationGo = new AttackAnimationGo(timer, player1JLabel, player2JLabel);
 		timer.schedule(attackAnimationGo, delay, period);
