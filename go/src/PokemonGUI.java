@@ -31,8 +31,8 @@ public class PokemonGUI {
 	JLabel player1JLabel = new JLabel();
 	JLabel player2JLabel = new JLabel();
 	
-	ImageIcon player1Image = new ImageIcon("./pic/chromeIcon.png");
-	ImageIcon player2Image = new ImageIcon("./pic/edgeIcon.png");
+	ImageIcon player1Image = new ImageIcon("./pic/≥«•ß¿t.png");
+	ImageIcon player2Image = new ImageIcon("./pic/§p§ı¿s.png");
 	
 	AttackButtonKeyBoardListener myKeyListener = new AttackButtonKeyBoardListener();
 	Arena arena = new Arena(null, null, null);
@@ -145,12 +145,12 @@ public class PokemonGUI {
 	private void JPanelInit() throws IOException
 	{		
 		player1JLabel.setIcon(player1Image);
-		player1JLabel.setLocation(333 - player1Image.getIconWidth(), 167 - player1Image.getIconHeight());
+		player1JLabel.setLocation(333 - (player1Image.getIconWidth() / 2), 0);
 		player1JLabel.setSize(player1Image.getIconWidth(), player1Image.getIconHeight());
 		player1JLabel.setFocusable(false);
 		
 		player2JLabel.setIcon(player2Image);
-		player2JLabel.setLocation(666 - player2Image.getIconWidth(), 167 - player2Image.getIconHeight());
+		player2JLabel.setLocation(666 - (player2Image.getIconWidth() / 2), 0);
 		player2JLabel.setSize(player2Image.getIconWidth(), player2Image.getIconHeight());
 		player2JLabel.setFocusable(false);
 		
@@ -181,13 +181,14 @@ public class PokemonGUI {
 	private void arenaInit()
 	{
 		Actor actor = new Actor("§p∞™", "092214221", "221");
+		
         MonsterFire botMonster = new MonsterFire();
-        botMonster.ID = "EdgeBot";
-        botMonster.Name = "EdgeBot";
+        botMonster.ID = "§p§ı¿s";
+        botMonster.Name = "§p§ı¿s";
         
         MonsterWater playerMonster = new MonsterWater();
-        playerMonster.ID = "Chrome";
-        playerMonster.Name = "Chrome";
+        playerMonster.ID = "≥«•ß¿t";
+        playerMonster.Name = "≥«•ß¿t";
         
         actor.MonsterWater = playerMonster;
         this.arena = new Arena(actor.MonsterWater, botMonster, jTextArea);

@@ -101,11 +101,11 @@ public class AttackAnimationGo extends TimerTask
 		
 		if (isTakeAttackerBack == false)
 		{
-			if (X + (width / 2) >= this.Attacker.getX())	
+			if (X - (width / 2) >= this.Attacker.getX())	
 			{
 				this.TakeAttacker.setLocation(X - offset, Y);
 			}
-			else 
+			else
 			{
 				isTakeAttackerBack = true;
 			}
