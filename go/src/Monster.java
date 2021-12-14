@@ -1,10 +1,29 @@
 import java.util.Random;
 
+import javax.swing.JTextArea;
+
 public class Monster extends MonsterBase implements Cloneable{
     public String ID, Name;
     public int MonsterType;
-    protected int HP, Attack, Defense;    
+    protected int HP, Attack, Defense;   
+    private String statusString = "";
     
+    public String getStatusString(Monster anotherMonster, boolean isBothMonsterDefense)
+    {
+    	if (isBothMonsterDefense)
+    	{
+    		statusString = "";
+    	}
+    	
+    	if (statusString.equals("") || statusString.isBlank() || statusString.isEmpty())
+    	{
+    		statusString += Name + " 失血量：0" + " 剩餘血量：" + HP + " 攻擊力：" + Attack + " 防守力：" + Defense;
+    		statusString += "\n";
+    		statusString += anotherMonster.Name + " 失血量：0" + " 剩餘血量：" + anotherMonster.HP + " 攻擊力：" + anotherMonster.Attack + " 防守力：" + anotherMonster.Defense;
+    		statusString += "\n";
+    	}
+    	return statusString;
+    }
     
     int Attack(Monster enemy) 
     {
@@ -12,6 +31,8 @@ public class Monster extends MonsterBase implements Cloneable{
         int Arandom = new Random(System.currentTimeMillis()).nextInt(9) + 0;
         int lostHP = 0;
         int result = 0;
+        String myDetailString = new String();
+        String enemyDetailString = new String();
         if (Arandom == 10) 
         {// 10% x2
             if (Attack * 2 - enemy.Defense > 0) 
@@ -28,9 +49,11 @@ public class Monster extends MonsterBase implements Cloneable{
                 {
                     result = 1;
                 }
-                System.out.println(Name + " 失血量：0" + " 剩餘血量：" + HP + " 攻擊力：" + Attack + " 防守力：" + Defense);
-                System.out.println(enemy.Name + " 失血量：" + lostHP + " 剩餘血量：" + enemy.HP + " 攻擊力：" + enemy.Attack + " 防守力："
-                        + enemy.Defense + "\n");
+                myDetailString = Name + " 失血量：0" + " 剩餘血量：" + HP + " 攻擊力：" + Attack + " 防守力：" + Defense;
+                enemyDetailString = enemy.Name + " 失血量：" + lostHP + " 剩餘血量：" + enemy.HP + " 攻擊力：" + enemy.Attack + " 防守力：" + enemy.Defense + "\n";
+                System.out.println(myDetailString);
+                System.out.println(enemyDetailString);
+                statusString = "\n" + myDetailString + "\n" + enemyDetailString + "\n";
             } 
             else 
             {
@@ -53,9 +76,11 @@ public class Monster extends MonsterBase implements Cloneable{
                 {
                     result = 1;
                 }
-                System.out.println(Name + " 失血量：0" + " 剩餘血量：" + HP + " 攻擊力：" + Attack + " 防守力：" + Defense);
-                System.out.println(enemy.Name + " 失血量：" + lostHP + " 剩餘血量：" + enemy.HP + " 攻擊力：" + enemy.Attack + " 防守力："
-                        + enemy.Defense + "\n");
+                myDetailString = Name + " 失血量：0" + " 剩餘血量：" + HP + " 攻擊力：" + Attack + " 防守力：" + Defense;
+                enemyDetailString = enemy.Name + " 失血量：" + lostHP + " 剩餘血量：" + enemy.HP + " 攻擊力：" + enemy.Attack + " 防守力：" + enemy.Defense + "\n";
+                System.out.println(myDetailString);
+                System.out.println(enemyDetailString);
+                statusString = "\n" + myDetailString + "\n" + enemyDetailString + "\n";
             } 
             else 
             {
@@ -77,9 +102,11 @@ public class Monster extends MonsterBase implements Cloneable{
                 {
                     result = 1;
                 }
-                System.out.println(Name + " 失血量：0" + " 剩餘血量：" + HP + " 攻擊力：" + Attack + " 防守力：" + Defense);
-                System.out.println(enemy.Name + " 失血量：" + lostHP + " 剩餘血量：" + enemy.HP + " 攻擊力：" + enemy.Attack + " 防守力："
-                        + enemy.Defense + "\n");
+                myDetailString = Name + " 失血量：0" + " 剩餘血量：" + HP + " 攻擊力：" + Attack + " 防守力：" + Defense;
+                enemyDetailString = enemy.Name + " 失血量：" + lostHP + " 剩餘血量：" + enemy.HP + " 攻擊力：" + enemy.Attack + " 防守力：" + enemy.Defense + "\n";
+                System.out.println(myDetailString);
+                System.out.println(enemyDetailString);
+                statusString = "\n" + myDetailString + "\n" + enemyDetailString + "\n";
             } 
             else 
             {
@@ -102,9 +129,11 @@ public class Monster extends MonsterBase implements Cloneable{
                 {
                     result = 1;
                 }
-                System.out.println(Name + " 失血量：0" + " 剩餘血量：" + HP + " 攻擊力：" + Attack + " 防守力：" + Defense);
-                System.out.println(enemy.Name + " 失血量：" + lostHP + " 剩餘血量：" + enemy.HP + " 攻擊力：" + enemy.Attack + " 防守力："
-                        + enemy.Defense + "\n");
+                myDetailString = Name + " 失血量：0" + " 剩餘血量：" + HP + " 攻擊力：" + Attack + " 防守力：" + Defense;
+                enemyDetailString = enemy.Name + " 失血量：" + lostHP + " 剩餘血量：" + enemy.HP + " 攻擊力：" + enemy.Attack + " 防守力：" + enemy.Defense + "\n";
+                System.out.println(myDetailString);
+                System.out.println(enemyDetailString);
+                statusString = "\n" + myDetailString + "\n" + enemyDetailString + "\n";
             } 
             else 
             {
@@ -122,6 +151,9 @@ public class Monster extends MonsterBase implements Cloneable{
         //int Brandom = (int) (Math.random() * (10 - 1 + 1) + 1);
     	int Brandom = new Random(System.currentTimeMillis()).nextInt(10) + 1;
         int result = 0;
+        String myDetailString = new String();
+        String enemyDetailString = new String();
+        
         if (Brandom == 10) {// 10% x4
             object.Defense *= 4;
             result = 1;
@@ -134,6 +166,14 @@ public class Monster extends MonsterBase implements Cloneable{
         } else if (Brandom >= 1 && Brandom <= 3) {// 30% fail;
             result = 2;
         }
+        
+        
+        myDetailString = Name + " 失血量：0" + " 剩餘血量：" + HP + " 攻擊力：" + Attack + " 防守力：" + Defense;
+        enemyDetailString = object.Name + " 失血量：0" + " 剩餘血量：" + object.HP + " 攻擊力：" + object.Attack + " 防守力：" + object.Defense + "\n";
+        System.out.println(myDetailString);
+        System.out.println(enemyDetailString);
+        statusString = "\n" + myDetailString + "\n" + enemyDetailString + "\n";
+        
         return result;
     }
     
@@ -141,4 +181,6 @@ public class Monster extends MonsterBase implements Cloneable{
     {
     	return this.Defense;
     }
+    
+    
 }

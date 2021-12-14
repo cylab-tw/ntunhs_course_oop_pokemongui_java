@@ -1,9 +1,8 @@
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.Font;
 import java.io.IOException;
-import java.util.Random;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -12,8 +11,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.plaf.FontUIResource;
-import javax.swing.text.AttributeSet.FontAttribute;
 
 //Java GUI Swing 入門：https://iter01.com/560263.html
 //Layout：https://blog.xuite.net/jane17512001/PenguinDesign/243299537
@@ -27,9 +24,11 @@ public class PokemonGUI {
     JButton defenseButton = new JButton("防禦");
     JButton baseDetailButton = new JButton("基本資料");
     
-    JTextArea jTextArea = new JTextArea("遊戲開始!\n");
+    JTextArea jTextAreaConsole = new JTextArea("遊戲開始!\n");
+    //JTextArea jTextAreaMonsterStatusDetail = new JTextArea();
     Font myFont = new Font("微軟正黑體", Font.PLAIN, 18);
-    JScrollPane jScrollPane = new JScrollPane(jTextArea);
+    JScrollPane jScrollPaneConsole = new JScrollPane(jTextAreaConsole);
+    //JScrollPane jScrollPaneMonsterStatusDetail = new JScrollPane(jTextAreaMonsterStatusDetail);
 	JPanel jPanel = new JPanel();
 	
 	JLabel player1JLabel = new JLabel();
@@ -115,7 +114,7 @@ public class PokemonGUI {
 		ConsoleBagConstraints.weighty = 3;
 		ConsoleBagConstraints.fill = GridBagConstraints.BOTH;
 		ConsoleBagConstraints.anchor = GridBagConstraints.WEST;
-		jFrame.add(jScrollPane, ConsoleBagConstraints);
+		jFrame.add(jScrollPaneConsole, ConsoleBagConstraints);
 	}
 	
 	private void ButtonInit()
@@ -127,7 +126,7 @@ public class PokemonGUI {
 	
 	private void AttackButtonInit() 
 	{
-		AttackButtonActionEvent attackButtonActionEvent = new AttackButtonActionEvent(attackButton, jTextArea, player1JLabel, player2JLabel, arena);
+		AttackButtonActionEvent attackButtonActionEvent = new AttackButtonActionEvent(attackButton, jTextAreaConsole, player1JLabel, player2JLabel, arena);
 		attackButton.addActionListener(attackButtonActionEvent);
 		attackButton.setFocusable(false);
 		attackButton.setFont(myFont);
@@ -135,7 +134,7 @@ public class PokemonGUI {
 	
 	private void DefenseButtonInit() 
 	{
-		DefenseButtonActionEvent defenseButtonActionEvent = new DefenseButtonActionEvent(defenseButton, jTextArea, player1JLabel, player2JLabel, arena);
+		DefenseButtonActionEvent defenseButtonActionEvent = new DefenseButtonActionEvent(defenseButton, jTextAreaConsole, player1JLabel, player2JLabel, arena);
 		defenseButton.addActionListener(defenseButtonActionEvent);
 		defenseButton.setFocusable(false);
 		defenseButton.setFont(myFont);
@@ -143,7 +142,7 @@ public class PokemonGUI {
 	
 	private void BaseDetailButtonInit() 
 	{
-		BaseDetailButtonActionEvent baseDetailButtonActionEvent = new BaseDetailButtonActionEvent(baseDetailButton, jTextArea, player1JLabel, player2JLabel);
+		BaseDetailButtonActionEvent baseDetailButtonActionEvent = new BaseDetailButtonActionEvent(baseDetailButton, jTextAreaConsole, player1JLabel, player2JLabel);
 		baseDetailButton.addActionListener(baseDetailButtonActionEvent);
 		baseDetailButton.setFocusable(false);
 		baseDetailButton.setFont(myFont);
@@ -170,9 +169,9 @@ public class PokemonGUI {
 	
 	private void KeyBoardListenerInit() 
 	{
-		AttackButtonKeyBoardListener attackButtonKeyBoardListener = new AttackButtonKeyBoardListener(attackButton, jTextArea);		
-		DefenseButtonKeyBoardListener defenseButtonKeyBoardListener = new DefenseButtonKeyBoardListener(defenseButton, jTextArea);		
-		BaseDetailButtonKeyBoardListener baseDetailButtonKeyBoardListener = new BaseDetailButtonKeyBoardListener(baseDetailButton, jTextArea);
+		AttackButtonKeyBoardListener attackButtonKeyBoardListener = new AttackButtonKeyBoardListener(attackButton, jTextAreaConsole);		
+		DefenseButtonKeyBoardListener defenseButtonKeyBoardListener = new DefenseButtonKeyBoardListener(defenseButton, jTextAreaConsole);		
+		BaseDetailButtonKeyBoardListener baseDetailButtonKeyBoardListener = new BaseDetailButtonKeyBoardListener(baseDetailButton, jTextAreaConsole);
 		
 		jFrame.addKeyListener(attackButtonKeyBoardListener);
 		jFrame.addKeyListener(defenseButtonKeyBoardListener);
@@ -181,9 +180,9 @@ public class PokemonGUI {
 	
 	private void JTextAreaInit()
 	{
-		this.jTextArea.setEditable(false);
-		this.jTextArea.setFocusable(false);
-		this.jTextArea.setFont(myFont);
+		this.jTextAreaConsole.setEditable(false);
+		this.jTextAreaConsole.setFocusable(false);
+		this.jTextAreaConsole.setFont(myFont);
 		
 	}
 	
@@ -200,7 +199,7 @@ public class PokemonGUI {
         playerMonster.Name = "傑尼龜";
         
         actor.MonsterWater = playerMonster;
-        this.arena = new Arena(actor.MonsterWater, botMonster, jTextArea);
+        this.arena = new Arena(actor.MonsterWater, botMonster, jTextAreaConsole);
 	}
 	
 	private void init() throws IOException

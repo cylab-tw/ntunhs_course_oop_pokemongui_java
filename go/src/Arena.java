@@ -90,6 +90,8 @@ public class Arena {
 	public void fight()
 	{	
 		if (this.isFightDone) JOptionPane.showMessageDialog(null, "戰鬥已結束!");
+		else this.jTextArea.setText("");
+		
 		
 		this.updateIsBothMonsterChoosedAction();
 		
@@ -111,7 +113,7 @@ public class Arena {
 			}
 			else if (this.monster1Action.equals(this.defenseString) && this.monster2Action.equals(this.defenseString))
 			{
-				this.isFightDone = this.bothDefenseMonster();
+				this.isFightDone = this.bothDefenseMonster(monster1, monster2);
 			}
 		}
 		
@@ -144,6 +146,7 @@ public class Arena {
 				break;
 		}
 		
+		this.jTextArea.setText(jTextArea.getText() + attacker.getStatusString(takeAttacker, false));
 		
 		return result;
 	}
@@ -214,11 +217,12 @@ public class Arena {
 		return result;
 	}
 	
-	private boolean bothDefenseMonster()
+	private boolean bothDefenseMonster(Monster monster1, Monster monster2)
 	{
 		boolean result = false;
 		
-		this.jTextArea.setText(jTextArea.getText() + "雙方防守\n");
+		this.jTextArea.setText(jTextArea.getText() + "雙方防守" + "\n\n");
+		this.jTextArea.setText(jTextArea.getText() + monster1.getStatusString(monster2, true));
 		
 		return result;
 	}
@@ -231,4 +235,8 @@ public class Arena {
 		result = BotSelect == 1 ? this.attackString : this.defenseString;
 		return result;
 	}
+	
+	
+		
+
 }
