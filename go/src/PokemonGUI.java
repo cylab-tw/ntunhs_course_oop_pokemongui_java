@@ -13,7 +13,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 //Java GUI Swing ¤Jªù¡Ghttps://iter01.com/560263.html
-//Layout¡Ghttps¡G//blog.xuite.net/jane17512001/PenguinDesign/243299537
+//Layout¡Ghttps://blog.xuite.net/jane17512001/PenguinDesign/243299537
 //Button Event¡Ghttps://www.gushiciku.cn/pl/aljW/zh-tw
 
 public class PokemonGUI {
@@ -58,9 +58,9 @@ public class PokemonGUI {
 		imageBagConstraints.gridx = 0;
 		imageBagConstraints.gridy = 0;
 		imageBagConstraints.gridwidth = 3;
-		imageBagConstraints.gridheight = 2;
+		imageBagConstraints.gridheight = 1;
 		imageBagConstraints.weightx = 1;
-		imageBagConstraints.weighty = 1;
+		imageBagConstraints.weighty = 3;
 		imageBagConstraints.fill = GridBagConstraints.BOTH;
 		imageBagConstraints.anchor = GridBagConstraints.WEST;
 		jFrame.add(jPanel, imageBagConstraints);
@@ -108,7 +108,7 @@ public class PokemonGUI {
 		ConsoleBagConstraints.gridwidth = 3;
 		ConsoleBagConstraints.gridheight = 1;
 		ConsoleBagConstraints.weightx = 1;
-		ConsoleBagConstraints.weighty = 1;
+		ConsoleBagConstraints.weighty = 3;
 		ConsoleBagConstraints.fill = GridBagConstraints.BOTH;
 		ConsoleBagConstraints.anchor = GridBagConstraints.WEST;
 		jFrame.add(jScrollPane, ConsoleBagConstraints);
@@ -145,12 +145,12 @@ public class PokemonGUI {
 	private void JPanelInit() throws IOException
 	{		
 		player1JLabel.setIcon(player1Image);
-		player1JLabel.setLocation(333 - (player1Image.getIconWidth() / 2), 0);
+		player1JLabel.setLocation((333 - (player1Image.getIconWidth() / 2)), 0);
 		player1JLabel.setSize(player1Image.getIconWidth(), player1Image.getIconHeight());
 		player1JLabel.setFocusable(false);
 		
 		player2JLabel.setIcon(player2Image);
-		player2JLabel.setLocation(666 - (player2Image.getIconWidth() / 2), 0);
+		player2JLabel.setLocation((666 - (player2Image.getIconWidth() / 2)), 0);
 		player2JLabel.setSize(player2Image.getIconWidth(), player2Image.getIconHeight());
 		player2JLabel.setFocusable(false);
 		
