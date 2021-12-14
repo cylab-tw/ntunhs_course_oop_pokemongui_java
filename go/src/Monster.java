@@ -1,7 +1,5 @@
 import java.util.Random;
 
-import javax.swing.JTextArea;
-
 public class Monster extends MonsterBase implements Cloneable{
     public String ID, Name;
     public int MonsterType;
