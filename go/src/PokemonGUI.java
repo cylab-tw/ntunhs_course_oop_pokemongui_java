@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Font;
 import java.io.IOException;
 import java.util.Random;
 
@@ -11,6 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.plaf.FontUIResource;
+import javax.swing.text.AttributeSet.FontAttribute;
 
 //Java GUI Swing 入門：https://iter01.com/560263.html
 //Layout：https://blog.xuite.net/jane17512001/PenguinDesign/243299537
@@ -25,6 +28,7 @@ public class PokemonGUI {
     JButton baseDetailButton = new JButton("基本資料");
     
     JTextArea jTextArea = new JTextArea("遊戲開始!\n");
+    Font myFont = new Font("微軟正黑體", Font.PLAIN, 18);
     JScrollPane jScrollPane = new JScrollPane(jTextArea);
 	JPanel jPanel = new JPanel();
 	
@@ -126,6 +130,7 @@ public class PokemonGUI {
 		AttackButtonActionEvent attackButtonActionEvent = new AttackButtonActionEvent(attackButton, jTextArea, player1JLabel, player2JLabel, arena);
 		attackButton.addActionListener(attackButtonActionEvent);
 		attackButton.setFocusable(false);
+		attackButton.setFont(myFont);
 	}
 	
 	private void DefenseButtonInit() 
@@ -133,6 +138,7 @@ public class PokemonGUI {
 		DefenseButtonActionEvent defenseButtonActionEvent = new DefenseButtonActionEvent(defenseButton, jTextArea, player1JLabel, player2JLabel, arena);
 		defenseButton.addActionListener(defenseButtonActionEvent);
 		defenseButton.setFocusable(false);
+		defenseButton.setFont(myFont);
 	}
 	
 	private void BaseDetailButtonInit() 
@@ -140,6 +146,7 @@ public class PokemonGUI {
 		BaseDetailButtonActionEvent baseDetailButtonActionEvent = new BaseDetailButtonActionEvent(baseDetailButton, jTextArea, player1JLabel, player2JLabel);
 		baseDetailButton.addActionListener(baseDetailButtonActionEvent);
 		baseDetailButton.setFocusable(false);
+		baseDetailButton.setFont(myFont);
 	}
 	
 	private void JPanelInit() throws IOException
@@ -176,6 +183,8 @@ public class PokemonGUI {
 	{
 		this.jTextArea.setEditable(false);
 		this.jTextArea.setFocusable(false);
+		this.jTextArea.setFont(myFont);
+		
 	}
 	
 	private void arenaInit()
