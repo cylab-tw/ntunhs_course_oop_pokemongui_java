@@ -1,6 +1,6 @@
 public class Author {
 	static String getter() {
-        String info = "ºï¸¹¡G¤p°ª\n©m¦W¡G°ª®¶®Ù\n¹ï¥»°ó½Òªº´Á³\¡G¯à¹L¬°Àu¥ı";
+        String info = "ç¶½è™Ÿï¼šå°é«˜\nå§“åï¼šé«˜æŒ¯æ¡“\nå°æœ¬å ‚èª²çš„æœŸè¨±ï¼šèƒ½éç‚ºå„ªå…ˆ";
         return info;
     }
 }

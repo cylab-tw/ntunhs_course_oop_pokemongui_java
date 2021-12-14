@@ -15,9 +15,9 @@ public class Monster extends MonsterBase implements Cloneable{
     	
     	if (statusString.equals("") || statusString.isBlank() || statusString.isEmpty())
     	{
-    		statusString += Name + " ¥¢¦å¶q¡G0" + " ³Ñ¾l¦å¶q¡G" + HP + " §ğÀ»¤O¡G" + Attack + " ¨¾¦u¤O¡G" + Defense;
+    		statusString += Name + " å¤±è¡€é‡ï¼š0" + " å‰©é¤˜è¡€é‡ï¼š" + HP + " æ”»æ“ŠåŠ›ï¼š" + Attack + " é˜²å®ˆåŠ›ï¼š" + Defense;
     		statusString += "\n";
-    		statusString += anotherMonster.Name + " ¥¢¦å¶q¡G0" + " ³Ñ¾l¦å¶q¡G" + anotherMonster.HP + " §ğÀ»¤O¡G" + anotherMonster.Attack + " ¨¾¦u¤O¡G" + anotherMonster.Defense;
+    		statusString += anotherMonster.Name + " å¤±è¡€é‡ï¼š0" + " å‰©é¤˜è¡€é‡ï¼š" + anotherMonster.HP + " æ”»æ“ŠåŠ›ï¼š" + anotherMonster.Attack + " é˜²å®ˆåŠ›ï¼š" + anotherMonster.Defense;
     		statusString += "\n";
     	}
     	return statusString;
@@ -47,8 +47,8 @@ public class Monster extends MonsterBase implements Cloneable{
                 {
                     result = 1;
                 }
-                myDetailString = Name + " ¥¢¦å¶q¡G0" + " ³Ñ¾l¦å¶q¡G" + HP + " §ğÀ»¤O¡G" + Attack + " ¨¾¦u¤O¡G" + Defense;
-                enemyDetailString = enemy.Name + " ¥¢¦å¶q¡G" + lostHP + " ³Ñ¾l¦å¶q¡G" + enemy.HP + " §ğÀ»¤O¡G" + enemy.Attack + " ¨¾¦u¤O¡G" + enemy.Defense + "\n";
+                myDetailString = Name + " å¤±è¡€é‡ï¼š0" + " å‰©é¤˜è¡€é‡ï¼š" + HP + " æ”»æ“ŠåŠ›ï¼š" + Attack + " é˜²å®ˆåŠ›ï¼š" + Defense;
+                enemyDetailString = enemy.Name + " å¤±è¡€é‡ï¼š" + lostHP + " å‰©é¤˜è¡€é‡ï¼š" + enemy.HP + " æ”»æ“ŠåŠ›ï¼š" + enemy.Attack + " é˜²å®ˆåŠ›ï¼š" + enemy.Defense + "\n";
                 System.out.println(myDetailString);
                 System.out.println(enemyDetailString);
                 statusString = "\n" + myDetailString + "\n" + enemyDetailString + "\n";
@@ -74,8 +74,8 @@ public class Monster extends MonsterBase implements Cloneable{
                 {
                     result = 1;
                 }
-                myDetailString = Name + " ¥¢¦å¶q¡G0" + " ³Ñ¾l¦å¶q¡G" + HP + " §ğÀ»¤O¡G" + Attack + " ¨¾¦u¤O¡G" + Defense;
-                enemyDetailString = enemy.Name + " ¥¢¦å¶q¡G" + lostHP + " ³Ñ¾l¦å¶q¡G" + enemy.HP + " §ğÀ»¤O¡G" + enemy.Attack + " ¨¾¦u¤O¡G" + enemy.Defense + "\n";
+                myDetailString = Name + " å¤±è¡€é‡ï¼š0" + " å‰©é¤˜è¡€é‡ï¼š" + HP + " æ”»æ“ŠåŠ›ï¼š" + Attack + " é˜²å®ˆåŠ›ï¼š" + Defense;
+                enemyDetailString = enemy.Name + " å¤±è¡€é‡ï¼š" + lostHP + " å‰©é¤˜è¡€é‡ï¼š" + enemy.HP + " æ”»æ“ŠåŠ›ï¼š" + enemy.Attack + " é˜²å®ˆåŠ›ï¼š" + enemy.Defense + "\n";
                 System.out.println(myDetailString);
                 System.out.println(enemyDetailString);
                 statusString = "\n" + myDetailString + "\n" + enemyDetailString + "\n";
@@ -100,8 +100,8 @@ public class Monster extends MonsterBase implements Cloneable{
                 {
                     result = 1;
                 }
-                myDetailString = Name + " ¥¢¦å¶q¡G0" + " ³Ñ¾l¦å¶q¡G" + HP + " §ğÀ»¤O¡G" + Attack + " ¨¾¦u¤O¡G" + Defense;
-                enemyDetailString = enemy.Name + " ¥¢¦å¶q¡G" + lostHP + " ³Ñ¾l¦å¶q¡G" + enemy.HP + " §ğÀ»¤O¡G" + enemy.Attack + " ¨¾¦u¤O¡G" + enemy.Defense + "\n";
+                myDetailString = Name + " å¤±è¡€é‡ï¼š0" + " å‰©é¤˜è¡€é‡ï¼š" + HP + " æ”»æ“ŠåŠ›ï¼š" + Attack + " é˜²å®ˆåŠ›ï¼š" + Defense;
+                enemyDetailString = enemy.Name + " å¤±è¡€é‡ï¼š" + lostHP + " å‰©é¤˜è¡€é‡ï¼š" + enemy.HP + " æ”»æ“ŠåŠ›ï¼š" + enemy.Attack + " é˜²å®ˆåŠ›ï¼š" + enemy.Defense + "\n";
                 System.out.println(myDetailString);
                 System.out.println(enemyDetailString);
                 statusString = "\n" + myDetailString + "\n" + enemyDetailString + "\n";
@@ -127,8 +127,8 @@ public class Monster extends MonsterBase implements Cloneable{
                 {
                     result = 1;
                 }
-                myDetailString = Name + " ¥¢¦å¶q¡G0" + " ³Ñ¾l¦å¶q¡G" + HP + " §ğÀ»¤O¡G" + Attack + " ¨¾¦u¤O¡G" + Defense;
-                enemyDetailString = enemy.Name + " ¥¢¦å¶q¡G" + lostHP + " ³Ñ¾l¦å¶q¡G" + enemy.HP + " §ğÀ»¤O¡G" + enemy.Attack + " ¨¾¦u¤O¡G" + enemy.Defense + "\n";
+                myDetailString = Name + " å¤±è¡€é‡ï¼š0" + " å‰©é¤˜è¡€é‡ï¼š" + HP + " æ”»æ“ŠåŠ›ï¼š" + Attack + " é˜²å®ˆåŠ›ï¼š" + Defense;
+                enemyDetailString = enemy.Name + " å¤±è¡€é‡ï¼š" + lostHP + " å‰©é¤˜è¡€é‡ï¼š" + enemy.HP + " æ”»æ“ŠåŠ›ï¼š" + enemy.Attack + " é˜²å®ˆåŠ›ï¼š" + enemy.Defense + "\n";
                 System.out.println(myDetailString);
                 System.out.println(enemyDetailString);
                 statusString = "\n" + myDetailString + "\n" + enemyDetailString + "\n";
@@ -166,8 +166,8 @@ public class Monster extends MonsterBase implements Cloneable{
         }
         
         
-        myDetailString = Name + " ¥¢¦å¶q¡G0" + " ³Ñ¾l¦å¶q¡G" + HP + " §ğÀ»¤O¡G" + Attack + " ¨¾¦u¤O¡G" + Defense;
-        enemyDetailString = object.Name + " ¥¢¦å¶q¡G0" + " ³Ñ¾l¦å¶q¡G" + object.HP + " §ğÀ»¤O¡G" + object.Attack + " ¨¾¦u¤O¡G" + object.Defense + "\n";
+        myDetailString = Name + " å¤±è¡€é‡ï¼š0" + " å‰©é¤˜è¡€é‡ï¼š" + HP + " æ”»æ“ŠåŠ›ï¼š" + Attack + " é˜²å®ˆåŠ›ï¼š" + Defense;
+        enemyDetailString = object.Name + " å¤±è¡€é‡ï¼š0" + " å‰©é¤˜è¡€é‡ï¼š" + object.HP + " æ”»æ“ŠåŠ›ï¼š" + object.Attack + " é˜²å®ˆåŠ›ï¼š" + object.Defense + "\n";
         System.out.println(myDetailString);
         System.out.println(enemyDetailString);
         statusString = "\n" + myDetailString + "\n" + enemyDetailString + "\n";

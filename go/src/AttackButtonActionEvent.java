@@ -32,7 +32,7 @@ public class AttackButtonActionEvent implements ActionListener
 	{	
 		if (arena.isFightDone == false)
 		{
-			this.jTextArea.setText(jTextArea.getText() + "§ğÀ»!\n");
+			this.jTextArea.setText(jTextArea.getText() + "æ”»æ“Š!\n");
 			this.arenaInit();
 			
 			try {
@@ -44,7 +44,7 @@ public class AttackButtonActionEvent implements ActionListener
 		}
 		else 
 		{	
-			JOptionPane.showMessageDialog(null, "¾Ô°«¤wµ²§ô!");	
+			JOptionPane.showMessageDialog(null, "æˆ°é¬¥å·²çµæŸ!");	
 		}
 	}
 

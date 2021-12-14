@@ -24,7 +24,7 @@ public class BaseDetailButtonActionEvent implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{	
-		jTextArea.setText(jTextArea.getText() + "°ò¥»¸ê®Æ!");
+		jTextArea.setText(jTextArea.getText() + "åŸºæœ¬è³‡æ–™!");
 		JOptionPane.showMessageDialog(null, Author.getter());
 	}
 }

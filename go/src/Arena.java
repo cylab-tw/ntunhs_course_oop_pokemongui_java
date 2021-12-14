@@ -19,7 +19,7 @@ public class Arena {
 	
 	static final String attackString = "attack";
 	static final String defenseString = "defense";
-	static final String errorActionString = "¥X¨Æ¤Fªü§B";
+	static final String errorActionString = "å‡ºäº‹äº†é˜¿ä¼¯";
 	
 	public Arena(Monster monster1, Monster monster2, JTextArea jTextArea) 
 	{
@@ -89,7 +89,7 @@ public class Arena {
 	
 	public void fight()
 	{	
-		if (this.isFightDone) JOptionPane.showMessageDialog(null, "¾Ô°«¤wµ²§ô!");
+		if (this.isFightDone) JOptionPane.showMessageDialog(null, "æˆ°é¬¥å·²çµæŸ!");
 		else this.jTextArea.setText("");
 		
 		
@@ -117,7 +117,7 @@ public class Arena {
 			}
 		}
 		
-		if (this.isFightDone) JOptionPane.showMessageDialog(null, "¾Ô°«¤wµ²§ô!");
+		if (this.isFightDone) JOptionPane.showMessageDialog(null, "æˆ°é¬¥å·²çµæŸ!");
 	}
 	
 	public void fight(String monster1Action, String monster2Action)
@@ -136,13 +136,13 @@ public class Arena {
 		switch (result) 
 		{
 			case 1: 
-				this.jTextArea.setText(jTextArea.getText() + attacker.ID + "§ğÀ»¦¨¥\\n");
+				this.jTextArea.setText(jTextArea.getText() + attacker.ID + "æ”»æ“ŠæˆåŠŸ\n");
 				break; 
 			case 2: 
-				this.jTextArea.setText(jTextArea.getText() + attacker.ID + "§ğÀ»¥¢±Ñ\n");
+				this.jTextArea.setText(jTextArea.getText() + attacker.ID + "æ”»æ“Šå¤±æ•—\n");
 				break;
 			case 3: 
-				this.jTextArea.setText(jTextArea.getText() + attacker.ID + "À»±Ñ" + takeAttacker.ID + "\n");
+				this.jTextArea.setText(jTextArea.getText() + attacker.ID + "æ“Šæ•—" + takeAttacker.ID + "\n");
 				break;
 		}
 		
@@ -157,7 +157,7 @@ public class Arena {
 		int firstAttackedResult = 0;
 		int secondAttackedResult = 0;
 
-		//²Ä¤@¦¸§ğÀ»
+		//ç¬¬ä¸€æ¬¡æ”»æ“Š
 		if (firstAttacker == 1 && this.isFightDone == false)
 		{
 			firstAttackedResult = this.attackMonster(monster1, monster2);
@@ -169,7 +169,7 @@ public class Arena {
 			if (firstAttackedResult == 3) result = true;
 		}
 		
-		//²Ä¤G¦¸§ğÀ»
+		//ç¬¬äºŒæ¬¡æ”»æ“Š
 		if (firstAttacker == 1 && this.isFightDone == false)
 		{
 			secondAttackedResult = this.attackMonster(monster2, monster1);
@@ -190,7 +190,7 @@ public class Arena {
 		int defenseResult = 0;
 		int attackResult = 0;
 		
-		//¬ö¿ı¨¾¦u«eªº­ì©l¼Æ­È
+		//ç´€éŒ„é˜²å®ˆå‰çš„åŸå§‹æ•¸å€¼
 		int orgDefenseValue = defender.getDefenseValue();
 		//this.jTextArea.setText(jTextArea.getText() + "orgDefenseValue:"+ orgDefenseValue + "\n");
 		defenseResult = defender.Defend(defender);
@@ -200,18 +200,18 @@ public class Arena {
 		switch (defenseResult) 
 		{
 			case 1:
-				this.jTextArea.setText(jTextArea.getText() + defender.ID + "¨¾¦u¦¨¥\ ¨¾¿m¤O¥[¦¨\n");
+				this.jTextArea.setText(jTextArea.getText() + defender.ID + "é˜²å®ˆæˆåŠŸ é˜²ç¦¦åŠ›åŠ æˆ\n");
 				break;
 			case 2:
-				this.jTextArea.setText(jTextArea.getText() + defender.ID + "¨¾¦u¥¢±Ñ\n");
+				this.jTextArea.setText(jTextArea.getText() + defender.ID + "é˜²å®ˆå¤±æ•—\n");
 				break;
 		}
 		
-		//¶}©l§ğÀ»
+		//é–‹å§‹æ”»æ“Š
 		attackResult = this.attackMonster(attacker, defender);
 		if (attackResult == 3) result = true;
 		
-		//¦å¶q¦^¼g¦^¥h
+		//è¡€é‡å›å¯«å›å»
 		defender.Defense = orgDefenseValue;
 		
 		return result;
@@ -221,7 +221,7 @@ public class Arena {
 	{
 		boolean result = false;
 		
-		this.jTextArea.setText(jTextArea.getText() + "Âù¤è¨¾¦u" + "\n\n");
+		this.jTextArea.setText(jTextArea.getText() + "é›™æ–¹é˜²å®ˆ" + "\n\n");
 		this.jTextArea.setText(jTextArea.getText() + monster1.getStatusString(monster2, true));
 		
 		return result;

@@ -12,21 +12,21 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-//Java GUI Swing ¤Jªù¡Ghttps://iter01.com/560263.html
-//Layout¡Ghttps://blog.xuite.net/jane17512001/PenguinDesign/243299537
-//Button Event¡Ghttps://www.gushiciku.cn/pl/aljW/zh-tw
+//Java GUI Swing å…¥é–€ï¼šhttps://iter01.com/560263.html
+//Layoutï¼šhttps://blog.xuite.net/jane17512001/PenguinDesign/243299537
+//Button Eventï¼šhttps://www.gushiciku.cn/pl/aljW/zh-tw
 
 public class PokemonGUI {
 
 	JFrame jFrame = new JFrame("PokemonGUI");
 	
-	JButton attackButton = new JButton("§ğÀ»");
-    JButton defenseButton = new JButton("¨¾¿m");
-    JButton baseDetailButton = new JButton("°ò¥»¸ê®Æ");
+	JButton attackButton = new JButton("æ”»æ“Š");
+    JButton defenseButton = new JButton("é˜²ç¦¦");
+    JButton baseDetailButton = new JButton("åŸºæœ¬è³‡æ–™");
     
-    JTextArea jTextAreaConsole = new JTextArea("¹CÀ¸¶}©l!\n");
+    JTextArea jTextAreaConsole = new JTextArea("éŠæˆ²é–‹å§‹!\n");
     //JTextArea jTextAreaMonsterStatusDetail = new JTextArea();
-    Font myFont = new Font("·L³n¥¿¶ÂÅé", Font.PLAIN, 18);
+    Font myFont = new Font("å¾®è»Ÿæ­£é»‘é«”", Font.PLAIN, 18);
     JScrollPane jScrollPaneConsole = new JScrollPane(jTextAreaConsole);
     //JScrollPane jScrollPaneMonsterStatusDetail = new JScrollPane(jTextAreaMonsterStatusDetail);
 	JPanel jPanel = new JPanel();
@@ -34,8 +34,8 @@ public class PokemonGUI {
 	JLabel player1JLabel = new JLabel();
 	JLabel player2JLabel = new JLabel();
 	
-	ImageIcon player1Image = new ImageIcon("./pic/³Ç¥§Àt.png");
-	ImageIcon player2Image = new ImageIcon("./pic/¤p¤õÀs.png");
+	ImageIcon player1Image = new ImageIcon("./pic/å‚‘å°¼é¾œ.png");
+	ImageIcon player2Image = new ImageIcon("./pic/å°ç«é¾.png");
 	
 	AttackButtonKeyBoardListener myKeyListener = new AttackButtonKeyBoardListener();
 	Arena arena = new Arena(null, null, null);
@@ -188,15 +188,15 @@ public class PokemonGUI {
 	
 	private void arenaInit()
 	{
-		Actor actor = new Actor("¤p°ª", "092214221", "221");
+		Actor actor = new Actor("å°é«˜", "092214221", "221");
 		
         MonsterFire botMonster = new MonsterFire();
-        botMonster.ID = "¤p¤õÀs";
-        botMonster.Name = "¤p¤õÀs";
+        botMonster.ID = "å°ç«é¾";
+        botMonster.Name = "å°ç«é¾";
         
         MonsterWater playerMonster = new MonsterWater();
-        playerMonster.ID = "³Ç¥§Àt";
-        playerMonster.Name = "³Ç¥§Àt";
+        playerMonster.ID = "å‚‘å°¼é¾œ";
+        playerMonster.Name = "å‚‘å°¼é¾œ";
         
         actor.MonsterWater = playerMonster;
         this.arena = new Arena(actor.MonsterWater, botMonster, jTextAreaConsole);

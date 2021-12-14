@@ -11,16 +11,16 @@ public class Actor
         Name = name;
         Account = account;
         Password = password;
-        Monster = new Monster();// ¹w³]¤@­Ó©ÇÃ~
+        Monster = new Monster();// é è¨­ä¸€å€‹æ€ªç¸
     }
 
     int login(String account, String password) {
         if (Account.equals(account)) {
             if (Password.equals(password)) {
-                return 1;// µn¤J¦¨¥\
+                return 1;// ç™»å…¥æˆåŠŸ
             }
-            return 2;// ±K½X¿ù»~
+            return 2;// å¯†ç¢¼éŒ¯èª¤
         }
-        return 3;// ±b¤á¤£¦s¦b
+        return 3;// å¸³æˆ¶ä¸å­˜åœ¨
     }
 }

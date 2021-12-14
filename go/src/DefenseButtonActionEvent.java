@@ -3,7 +3,6 @@ import java.awt.event.ActionListener;
 import java.util.Timer;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
@@ -32,7 +31,7 @@ public class DefenseButtonActionEvent implements ActionListener
 	{	
 		if (arena.isFightDone == false) 
 		{
-			jTextArea.setText(jTextArea.getText() + "®æøm!\n");
+			jTextArea.setText(jTextArea.getText() + "Èò≤Á¶¶!\n");
 			this.arenaInit();
 			
 			if(this.arena.monster2Action.equals(Arena.attackString))
@@ -50,7 +49,7 @@ public class DefenseButtonActionEvent implements ActionListener
 		}
 		else 
 		{
-			JOptionPane.showMessageDialog(null, "æ‘∞´§wµ≤ßÙ!");
+			JOptionPane.showMessageDialog(null, "Êà∞È¨•Â∑≤ÁµêÊùü!");
 		}
 	}
 	
