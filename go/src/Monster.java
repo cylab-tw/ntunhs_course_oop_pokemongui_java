@@ -35,8 +35,8 @@ public class Monster extends MonsterBase implements Cloneable{
         {// 10% x2
             if (Attack * 2 - enemy.Defense > 0) 
             {
-                Attack *= 2;
-                lostHP += Attack - enemy.Defense;
+                //Attack *= 2;
+                lostHP += Attack*2 - enemy.Defense;
                 enemy.HP -= lostHP;
                 if (enemy.HP <= 0) 
                 {
@@ -62,8 +62,8 @@ public class Monster extends MonsterBase implements Cloneable{
         {// 20% x1.5
             if (Attack * 1.5 - enemy.Defense > 0) 
             {
-                Attack *= 1.5;
-                lostHP += Attack - enemy.Defense;
+                //Attack *= 1.5;
+                lostHP += Attack*1.5 - enemy.Defense;
                 enemy.HP -= lostHP;
                 if (enemy.HP <= 0) 
                 {
@@ -115,8 +115,8 @@ public class Monster extends MonsterBase implements Cloneable{
         {// 20% x0.5
             if (Attack * 0.5 - enemy.Defense > 0) 
             {
-                Attack *= 0.5;
-                lostHP += Attack - enemy.Defense;
+                //Attack *= 0.5;
+                lostHP += Attack*0.5 - enemy.Defense;
                 enemy.HP -= lostHP;
                 if (enemy.HP <= 0) 
                 {

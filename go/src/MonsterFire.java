@@ -3,7 +3,7 @@ public class MonsterFire extends Monster
     public int MonsterType =1;
     MonsterFire() 
     {
-        HP = 80;
+        HP = 100;
         Attack = 70;
         Defense = 5;
         ID = "001";
