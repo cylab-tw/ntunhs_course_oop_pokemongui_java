@@ -111,8 +111,8 @@ public class Monster extends MonsterBase implements Cloneable{
                 result = 2;
             }
         } 
-        else if (Arandom >= 3 && Arandom <= 4) 
-        {// 20% x0.5
+        else if (Arandom >= 2 && Arandom <= 4) 
+        {// 30% x0.5
             if (Attack * 0.5 - enemy.Defense > 0) 
             {
                 //Attack *= 0.5;
@@ -138,8 +138,8 @@ public class Monster extends MonsterBase implements Cloneable{
                 result = 2;
             }
         } 
-        else if (Arandom >= 1 && Arandom <= 2) 
-        {// 20% fail;
+        else if (Arandom >= 1 && Arandom <= 1) 
+        {// 10% fail;
             result = 2;
         }
         return result;
@@ -158,10 +158,10 @@ public class Monster extends MonsterBase implements Cloneable{
         } else if (Brandom >= 8 && Brandom <= 9) {// 20% x2
             object.Defense *= 2;
             result = 1;
-        } else if (Brandom >= 4 && Brandom <= 7) {// 40% x1.5
+        } else if (Brandom >= 2 && Brandom <= 7) {// 60% x1.5
             object.Defense *= 1.5;
             result = 1;
-        } else if (Brandom >= 1 && Brandom <= 3) {// 30% fail;
+        } else if (Brandom >= 1 && Brandom <= 1) {// 10% fail;
             result = 2;
         }
         

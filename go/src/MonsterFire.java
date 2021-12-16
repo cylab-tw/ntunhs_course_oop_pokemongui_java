@@ -25,12 +25,12 @@ public class MonsterFire extends Monster
             object.Defense *= 2;
             result = 1;
         } 
-        else if (Brandom >= 4 && Brandom <= 7) // 30% x1.5
+        else if (Brandom >= 2 && Brandom <= 7) // 50% x1.5
         {
             object.Defense *= 1.5;
             result = 1;
         } 
-        else if (Brandom >= 1 && Brandom <= 3) // 30% fail;
+        else if (Brandom >= 1 && Brandom <= 1) // 10% fail;
         {
             result = 2;
         }
