@@ -3,6 +3,7 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -23,12 +24,11 @@ public class PokemonGUI {
 	JButton attackButton = new JButton("攻擊");
     JButton defenseButton = new JButton("防禦");
     JButton baseDetailButton = new JButton("基本資料");
+    ArrayList<JButton> myJButtons = new ArrayList<JButton>();
     
     JTextArea jTextAreaConsole = new JTextArea("遊戲開始!\n");
-    //JTextArea jTextAreaMonsterStatusDetail = new JTextArea();
     Font myFont = new Font("微軟正黑體", Font.PLAIN, 18);
     JScrollPane jScrollPaneConsole = new JScrollPane(jTextAreaConsole);
-    //JScrollPane jScrollPaneMonsterStatusDetail = new JScrollPane(jTextAreaMonsterStatusDetail);
 	JPanel jPanel = new JPanel();
 	
 	JLabel player1JLabel = new JLabel();
@@ -126,18 +126,20 @@ public class PokemonGUI {
 	
 	private void AttackButtonInit() 
 	{
-		AttackButtonActionEvent attackButtonActionEvent = new AttackButtonActionEvent(attackButton, jTextAreaConsole, player1JLabel, player2JLabel, arena);
+		AttackButtonActionEvent attackButtonActionEvent = new AttackButtonActionEvent(attackButton, jTextAreaConsole, player1JLabel, player2JLabel, arena, myJButtons);
 		attackButton.addActionListener(attackButtonActionEvent);
 		attackButton.setFocusable(false);
 		attackButton.setFont(myFont);
+		myJButtons.add(attackButton);
 	}
 	
 	private void DefenseButtonInit() 
 	{
-		DefenseButtonActionEvent defenseButtonActionEvent = new DefenseButtonActionEvent(defenseButton, jTextAreaConsole, player1JLabel, player2JLabel, arena);
+		DefenseButtonActionEvent defenseButtonActionEvent = new DefenseButtonActionEvent(defenseButton, jTextAreaConsole, player1JLabel, player2JLabel, arena, myJButtons);
 		defenseButton.addActionListener(defenseButtonActionEvent);
 		defenseButton.setFocusable(false);
 		defenseButton.setFont(myFont);
+		myJButtons.add(defenseButton);
 	}
 	
 	private void BaseDetailButtonInit() 
@@ -146,6 +148,7 @@ public class PokemonGUI {
 		baseDetailButton.addActionListener(baseDetailButtonActionEvent);
 		baseDetailButton.setFocusable(false);
 		baseDetailButton.setFont(myFont);
+		myJButtons.add(baseDetailButton);
 	}
 	
 	private void JPanelInit() throws IOException

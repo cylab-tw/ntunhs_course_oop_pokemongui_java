@@ -1,5 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Timer;
 
 import javax.swing.JButton;
@@ -13,16 +14,18 @@ public class AttackButtonActionEvent implements ActionListener
 	JTextArea jTextArea = new JTextArea();
 	JLabel player1JLabel = new JLabel();
 	JLabel player2JLabel = new JLabel();
+	ArrayList<JButton> myJButtons = new ArrayList<JButton>();
 	Arena arena;
 	String botActionString = new String();
 	
-	public AttackButtonActionEvent(JButton jButton, JTextArea jTextArea, JLabel player1JLabel, JLabel player2JLabel, Arena arena) 
+	public AttackButtonActionEvent(JButton jButton, JTextArea jTextArea, JLabel player1JLabel, JLabel player2JLabel, Arena arena, ArrayList<JButton> myJButtons) 
 	{
 		this.jButton = jButton;
 		this.jTextArea = jTextArea;
 		this.player1JLabel = player1JLabel;
 		this.player2JLabel = player2JLabel;
 		this.arena = arena;
+		this.myJButtons = myJButtons;
 		this.botActionString = arena.getRandomAction();
 		
 	}
@@ -53,7 +56,7 @@ public class AttackButtonActionEvent implements ActionListener
 		long delay = 0L;
 		long period = 5L; 
 		Timer timer = new Timer();
-		AttackAnimationGo attackAnimationGo = new AttackAnimationGo(timer, player1JLabel, player2JLabel, arena);
+		AttackAnimationGo attackAnimationGo = new AttackAnimationGo(timer, player1JLabel, player2JLabel, arena, myJButtons);
 		timer.schedule(attackAnimationGo, delay, period);
 
 	}

@@ -1,6 +1,8 @@
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 
 public class AttackAnimationGo extends TimerTask
@@ -8,7 +10,9 @@ public class AttackAnimationGo extends TimerTask
 	Timer timer = new Timer();
 	JLabel Attacker = new JLabel();
 	JLabel TakeAttacker = new JLabel();
+	JButton jButton = new JButton();
 	Arena arena;
+	ArrayList<JButton> myJButtons = new ArrayList<JButton>();
 	
 	int orgAttackerX;
 	int orgAttackerY;
@@ -22,12 +26,13 @@ public class AttackAnimationGo extends TimerTask
 	
 	boolean isFromDefenseButtonActionEvent = false;
 	
-	public AttackAnimationGo(Timer timer, JLabel Attacker, JLabel TakeAttacker, Arena arena)
+	public AttackAnimationGo(Timer timer, JLabel Attacker, JLabel TakeAttacker, Arena arena, ArrayList<JButton> myJButtons)
 	{
 		this.timer = timer;
 		this.Attacker = Attacker;
 		this.TakeAttacker = TakeAttacker;
 		this.arena = arena;
+		this.myJButtons = myJButtons;
 		
 		this.orgAttackerX = Attacker.getX();
 		this.orgAttackerY = Attacker.getY();
@@ -38,12 +43,13 @@ public class AttackAnimationGo extends TimerTask
 		this.isFromDefenseButtonActionEvent = false;
 	}
 	
-	public AttackAnimationGo(Timer timer, JLabel Attacker, JLabel TakeAttacker, Arena arena, String fromDefenseButtonActionEvent)
+	public AttackAnimationGo(Timer timer, JLabel Attacker, JLabel TakeAttacker, Arena arena, ArrayList<JButton> myJButtons, String fromDefenseButtonActionEvent)
 	{
 		this.timer = timer;
 		this.Attacker = Attacker;
 		this.TakeAttacker = TakeAttacker;
 		this.arena = arena;
+		this.myJButtons = myJButtons;
 		
 		this.orgAttackerX = Attacker.getX();
 		this.orgAttackerY = Attacker.getY();
@@ -85,6 +91,7 @@ public class AttackAnimationGo extends TimerTask
 			}
 			else 
 			{
+				this.UnlockAllButton();
 				timer.cancel();
 				arena.fight();
 				timer.purge();
@@ -118,6 +125,7 @@ public class AttackAnimationGo extends TimerTask
 			}
 			else 
 			{
+				this.UnlockAllButton();
 				timer.cancel();
 				arena.fight();
 				timer.purge();
@@ -125,8 +133,20 @@ public class AttackAnimationGo extends TimerTask
 		}
 	}
 	
+	private void LockAllButton()
+	{
+		this.myJButtons.forEach((jButton) -> jButton.setEnabled(false));
+	}
+	
+	private void UnlockAllButton() 
+	{
+		this.myJButtons.forEach((jButton) -> jButton.setEnabled(true));
+	}
+	
 	public void run()
 	{
+		this.LockAllButton();
+		
 		if (this.isFromDefenseButtonActionEvent == false) 
 		{
 			this.attackerHitTakeAttacker();
